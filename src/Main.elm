@@ -1,5 +1,6 @@
 module Main exposing (..)
 
+import Commands exposing (fetchPlayers)
 import Html exposing (program)
 import Msgs exposing (Msg)
 import Models exposing (Model, initialModel)
@@ -10,7 +11,7 @@ import View exposing (view)
 
 init : ( Model, Cmd Msg )
 init =
-    ( initialModel, Cmd.none )
+    ( initialModel, fetchPlayers )
 
 
 main : Program Never Model Msg
