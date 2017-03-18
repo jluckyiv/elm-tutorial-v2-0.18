@@ -1,7 +1,6 @@
 module View exposing (view)
 
 import Html exposing (..)
-import Html.Attributes exposing (class)
 import Msgs exposing (Msg)
 import Models exposing (Model, Player)
 import Players.List
