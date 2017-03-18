@@ -1,4 +1,4 @@
-module Models exposing (Model, init)
+module Models exposing (Model, initialModel)
 
 import Msgs exposing (Msg)
 
@@ -7,6 +7,6 @@ type alias Model =
     String
 
 
-init : ( Model, Cmd Msg )
-init =
-    ( "Hello", Cmd.none )
+initialModel : Model
+initialModel =
+    "Hello"
