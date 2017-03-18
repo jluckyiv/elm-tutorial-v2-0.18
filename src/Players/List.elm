@@ -4,11 +4,15 @@ import Html exposing (..)
 import Html.Attributes exposing (class)
 import Msgs exposing (Msg)
 import Models exposing (Player)
+import RemoteData exposing (WebData)
 
 
-view : List Player -> Html Msg
-view players =
-    div [] [ nav, playerTable players ]
+view : WebData (List Player) -> Html Msg
+view response =
+    div []
+        [ nav
+        , maybePlayers response
+        ]
 
 
 nav : Html Msg
@@ -17,6 +21,22 @@ nav =
         [ div [ class "left p2" ]
             [ text "Players" ]
         ]
+
+
+maybePlayers : WebData (List Player) -> Html Msg
+maybePlayers response =
+    case response of
+        RemoteData.NotAsked ->
+            text ""
+
+        RemoteData.Loading ->
+            text "Loading"
+
+        RemoteData.Success players ->
+            playerTable players
+
+        RemoteData.Failure error ->
+            text (toString error)
 
 
 playerTable : List Player -> Html Msg
