@@ -1,0 +1,11 @@
+{
+  "name": "elm-tutorial-v2-0.18",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:jluckyiv/elm-tutorial-v2-0.18.git",
+  "author": "Jack Lucky <jack.lucky.iv@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "json-server": "0.9.5"
+  }
+}
