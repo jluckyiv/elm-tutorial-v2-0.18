@@ -1,7 +1,5 @@
 module Models exposing (Model, Player, initialModel)
 
-import Msgs exposing (Msg)
-
 
 type alias Model =
     { players : List Player
